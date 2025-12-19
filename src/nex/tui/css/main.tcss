@@ -1,0 +1,283 @@
+Screen {
+    layout: vertical;
+    background: $surface;
+    layers: base overlay notification;
+}
+
+.hidden {
+    display: none;
+}
+
+
+Header {
+    dock: top;
+    height: 1;
+    background: $surface-lighten-1;
+    color: $text-muted;
+    text-style: bold;
+}
+
+Footer {
+    dock: bottom;
+    height: 1;
+    background: $surface-lighten-1;
+    color: $text-muted;
+}
+
+#board {
+    height: 100%;
+    width: 100%;
+    margin: 1;
+    background: $surface;
+}
+
+.column {
+    width: 1fr;
+    height: 100%;
+    border: vkey $panel-lighten-2;
+    background: $panel;
+    margin: 0 1;
+    padding: 0 1;
+}
+
+.column:focus-within {
+    border: vkey $accent;
+    background: $panel-lighten-1;
+}
+
+.col-header {
+    text-align: center;
+    background: $panel-lighten-2;
+    color: $text;
+    dock: top;
+    height: 3;
+    padding: 1;
+    text-style: bold;
+    border-bottom: solid $surface;
+}
+
+
+TaskCard {
+    height: auto;
+    min-height: 3;
+    background: $surface;
+    border-left: tall $primary;
+    margin: 1 0;
+    padding: 1 2;
+    color: $text;
+}
+
+TaskCard:hover {
+    background: $surface-lighten-1;
+}
+
+TaskCard:focus {
+    border-left: tall $accent;
+    background: $surface-lighten-2;
+    color: $text; 
+}
+
+TaskCard.-done {
+    border-left: tall $success;
+    color: $text-muted;
+    background: $surface-darken-1;
+}
+
+TaskCard.-done:focus {
+     background: $surface;
+}
+
+TaskCard.-done .task-title {
+    text-style: strike;
+}
+
+.task-title {
+    text-style: bold;
+    width: 100%;
+}
+
+.task-desc {
+    color: $text-muted;
+    width: 100%;
+    height: auto;
+}
+
+
+TaskForm {
+    align: center middle;
+    background: $background 50%;
+}
+
+#form-container {
+    width: 60;
+    height: auto;
+    background: $panel;
+    border: thick $accent;
+    padding: 2;
+}
+
+.h1 {
+    text-align: center;
+    text-style: bold;
+    margin-bottom: 2;
+    color: $accent;
+    border-bottom: solid $primary;
+}
+
+Input {
+    margin-bottom: 1;
+    border: tall $primary;
+    background: $surface;
+}
+
+Input:focus {
+    border: tall $accent;
+}
+
+TextArea {
+    margin-bottom: 1;
+    border: tall $primary;
+    background: $surface;
+}
+
+TextArea:focus {
+    border: tall $accent;
+}
+
+#desc_input {
+    height: 9;
+}
+
+
+.buttons {
+    margin-top: 1;
+    align: right bottom;
+    height: 3;
+    width: 100%;
+}
+
+Button {
+    width: auto;
+    min-width: 12;
+    margin-left: 2;
+    background: $primary;
+    color: $text;
+    border: none;
+}
+
+Button:hover {
+    background: $primary-lighten-1;
+}
+
+Button.primary {
+    background: $accent;
+}
+
+Button.error {
+    background: $error;
+}
+
+
+Toast {
+    dock: top;
+    layer: notification;
+    width: auto;
+    max-width: 50%;
+    background: $success;
+    color: $text;
+    padding: 1 2;
+    margin: 1;
+    display: none;
+}
+
+Toast.show {
+    display: block;
+}
+
+
+BrainView {
+    height: 100%;
+    width: 100%;
+}
+
+.note-list-col {
+    width: 20%;
+    height: 100%;
+    background: $panel;
+    border-right: vkey $panel-lighten-2;
+}
+
+.editor-col {
+    width: 50%;
+    height: 100%;
+    background: $surface;
+    padding: 1;
+}
+
+.graph-col {
+    width: 30%;
+    height: 100%;
+    background: $surface-darken-1;
+    border-left: vkey $panel-lighten-2;
+    padding: 1;
+}
+
+.proc-col {
+    width: 40%;
+    height: 100%;
+    background: $panel;
+    border-right: vkey $panel-lighten-2;
+}
+
+#note-editor {
+    height: 90%;
+}
+
+.editor-actions {
+    height: auto;
+    align: right middle;
+}
+
+.h2 {
+    text-align: center;
+    background: $primary;
+    color: $text;
+    text-style: bold;
+}
+
+GraphWidget {
+    height: 100%;
+    width: 100%;
+    min-height: 20;
+    border: solid $accent;
+    background: $surface;
+}
+
+
+GanttView {
+    height: 100%;
+    width: 100%;
+    padding: 1;
+}
+
+GanttRow {
+    height: 3;
+    margin: 1 0;
+    padding: 1;
+    background: $surface;
+    border-left: tall $accent;
+    color: $text;
+}
+
+.gantt-header {
+    text-align: center;
+    background: $primary;
+    color: $text;
+    margin-bottom: 2;
+}
+
+.info {
+    text-align: center;
+    color: $text-muted;
+    padding: 2;
+}
